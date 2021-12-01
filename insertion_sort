@@ -1,0 +1,21 @@
+def insertion_sort (list_a):
+    #get value to sort, compare to immediate left, if larger do switch, then look at next item
+    #first item in unsorted list is in sorted list so start at index 1
+    indexing_length = range(1, len(list_a))
+    #go one by one through indexing length to take values and sort them 
+    for i in indexing_length:
+        value_to_sort = list_a[i]
+        #if value to left is higher than value currently trying to sort
+        #item to left is higher than right
+        #index condition to avoid negative indexing
+        while list_a[i-1] > value_to_sort and i > 0:
+            #this swaps the list position
+            list_a[i], list_a[i-1] = list_a[i-1], list_a[i]
+            #continue doing comparison down the list
+            #incrementally steps down list using i variable
+            #looks at next item
+            i = i-1
+    return list_a
+    
+    #https://www.youtube.com/watch?v=byHi41L9vTM&ab_channel=DerrickSherrill
+    #performs at same complexity as bubble and selection sort methods but can be a little faster
